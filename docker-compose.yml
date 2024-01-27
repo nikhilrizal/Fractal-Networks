@@ -1,0 +1,40 @@
+version: '3'
+services:
+  db:       
+    image: postgis/postgis:14-3.4-alpine
+    env_file: .local.env
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    networks:
+      - PrivateFractalNetworks
+    
+  backend:   # Django App services
+    build:
+      context: .
+    ports:
+      - "9002:8000"
+    volumes:
+      - ./App:/FractalNetworks
+
+    restart:
+      always
+
+    depends_on:
+      - db
+
+    env_file:
+      - .local.env
+
+    networks:
+      - PrivateFractalNetworks
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --timeout 120  
+             
+
+
+
+# Creating a network so both services can communicate
+networks:
+  PrivateFractalNetworks:
+    driver: bridge
