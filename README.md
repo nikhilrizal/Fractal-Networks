@@ -30,7 +30,7 @@ This is a simple Django application designed to demonstrate the configuration of
 3. **Test Cases:**
    - Run the following command for testing:
      ```bash
-     docker-compose exec backend python manage.py test postGisApp.test
+     docker-compose exec backend python manage.py test postGisApp.tests
      ```
 
 4. **Create Superuser:**
