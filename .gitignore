@@ -2,3 +2,4 @@
 /static
 /.local.env
 /manage.py
+/.pro.env
