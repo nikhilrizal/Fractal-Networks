@@ -13,18 +13,29 @@ This is a simple Django application designed to demonstrate the configuration of
 
 ### How to Use:
 
-1. **App URL:**
+1. **Build Docker Containers:**
+   - Run the following command to build the Docker containers:
+     ```bash
+     docker-compose build
+     ```
+
+2. **Run Docker Containers:**
+   - Start the application and services using the following command:
+     ```bash
+     docker-compose up
+     ```
+   
    - Access the application through: http://localhost:9002/
 
-2. **Test Cases:**
+3. **Test Cases:**
    - Run the following command for testing:
-     ```
+     ```bash
      docker-compose exec backend python manage.py test postGisApp.test
      ```
 
-3. **Create Superuser:**
+4. **Create Superuser:**
    - To create a superuser, use the following command:
-     ```
+     ```bash
      docker-compose exec backend python manage.py createsuperuser
      ```
 
@@ -34,5 +45,3 @@ This is a simple Django application designed to demonstrate the configuration of
 
 This app serves as a simple demonstration of Docker and Dockerization. It showcases the configuration of a Django app using Docker Compose for easy deployment and management.
 
-
----
