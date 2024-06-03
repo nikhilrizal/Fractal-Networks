@@ -1,6 +1,5 @@
-ARG USER=root
 
-FROM python:3.10.12-slim-buster
+FROM public.ecr.aws/docker/library/hello-world:nanoserver
 
 LABEL maintainer="nikdevcloud@gmail.com"
 
