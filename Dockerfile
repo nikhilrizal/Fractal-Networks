@@ -1,4 +1,4 @@
-FROM busybox
+FROM public.ecr.aws/docker/library/busybox:stable-musl
 
 # Define build arguments
 ARG CD_CODEBUILD_BATCH_BUILD_IDENTIFIER
